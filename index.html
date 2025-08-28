@@ -39,19 +39,28 @@
             </div>
         </section>
 
-        <section class="story-section">
+        <section class="excellence-section">
             <div class="container">
-                <div class="story-content">
-                    <div class="story-text-content">
-                        <h2>Our story in innovation and excellence</h2>
-                        <p>Noor is an elevated spiritual companion combining precision prayer support, interactive Quran recitation, ambient scent diffusion, and cutting-edge power in a single elegant device.</p>
-                        <button class="read-more-btn">Read More</button>
+                <div class="excellence-content">
+                    <div class="excellence-image-stack">
+                        <img src="images/noor-version-image-6.webp" alt="Innovation Image 1" class="main-image">
+                        <img src="images/noor-version-image-3.webp" alt="Innovation Image 2" class="secondary-image">
                     </div>
-                    <div class="story-stats-grid">
-                        <div class="stat-item"><h3>7+</h3><p>Years Experience</p></div>
-                        <div class="stat-item"><h3>2,000+</h3><p>Global Impact</p></div>
-                        <div class="stat-item"><h3>3,200+</h3><p>Successful Deployments</p></div>
-                        <div class="stat-item"><h3>97%</h3><p>Client Satisfaction</p></div>
+                    <div class="excellence-text-content">
+                        <h2>Our story in innovation and excellence</h2>
+                        <p>Noor leads the way in the smart Islamic lifestyle revolution, shaping the future of faith-based technology. Our commitment to innovation is your path to unparalleled success.</p>
+                        <div class="icon-features-grid">
+                            <div class="icon-feature-item">
+                                <div class="icon-feature-icon">💡</div>
+                                <h3>Pioneering Technology</h3>
+                                <p>We leverage advanced technology to create sophisticated solutions that support a mindful and modern Muslim lifestyle.</p>
+                            </div>
+                            <div class="icon-feature-item">
+                                <div class="icon-feature-icon">⭐</div>
+                                <h3>Deep Expertise</h3>
+                                <p>Our team consists of seasoned professionals and specialists with extensive experience in Islamic lifestyle technology.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,92 +69,58 @@
         <section class="full-width-image-section">
             <div class="video-image-container">
                 <img src="images/noor-video-image.webp" alt="NoorMinar Lifestyle Image">
-                <div class="play-button"></div>
+                <div class="play-button" id="play-button"></div>
             </div>
         </section>
 
-        <section class="excellence-section">
+        <!-- Video Modal -->
+        <div id="video-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="close-button">&times;</span>
+                <video id="video-player" controls>
+                    <source src="images/video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <section class="split-content-section" id="features">
             <div class="container">
-                <div class="excellence-content">
-                    <div class="excellence-image-stack">
-                        <img src="images/noor-version-color-3.webp" alt="Innovation Image 1" class="main-image">
-                        <img src="images/noor-version-color-4.webp" alt="Innovation Image 2" class="secondary-image">
-                    </div>
-                    <div class="excellence-text-content">
-                        <h2>Our story in innovation and excellence</h2>
-                        <p>At Noor, we are at the forefront of the smart Islamic lifestyle revolution, redefining possibilities and shaping the future of faith-based technology. Here's why choosing us sets you on a path towards unparalleled innovation and success.</p>
-                        <div class="icon-features-grid">
-                            <div class="icon-feature-item">
-                                <div class="icon-feature-icon">💡</div>
-                                <h3>Cutting-edge technology</h3>
-                                <p>We harness the power of modern technology to craft state-of-the-art solutions for a mindful Muslim lifestyle.</p>
-                            </div>
-                            <div class="icon-feature-item">
-                                <div class="icon-feature-icon">⭐</div>
-                                <h3>Expertise and experience</h3>
-                                <p>Our team comprises skilled professionals and experts deeply entrenched in the field of Islamic lifestyle technology.</p>
-                            </div>
+                <div class="split-content">
+                    <div class="text-content">
+                        <div class="feature-text active" data-image="images/noor-version-color-1.webp">
+                            <h2>Prayer & Worship Core</h2>
+                            <ul>
+                                <li>Automatic, location-aware prayer times with Fiqh method customization.</li>
+                                <li>Rich Athan alerts from selectable Qaris.</li>
+                                <li>Interactive OLED display: next prayer countdown, Hijri/Gregorian dates, Qibla compass, Duas/Hadith rotation.</li>
+                                <li>Voice commands for playback, timing queries, Quran navigation.</li>
+                                <li>Follow-along Quran mode with Arabic + translation, ayah highlighting, memorization/repeat tools.</li>
+                            </ul>
+                        </div>
+                        <div class="feature-text" data-image="images/noor-version-image-5.webp">
+                            <h2>Advanced Scent System</h2>
+                            <ul>
+                                <li>Hidden Modular Cartridge Slot just above the OLED—concealed from view but easily replaceable.</li>
+                                <li>Dual-Mode Diffusion: Automatic gentle scent burst synchronized with Athan. Manual or scheduled diffusion via app.</li>
+                                <li>Cartridge Lines (Curated Scents): Arabic Oud Series, Bakhoor Collection, Floral Harmony, Spiritual Blend.</li>
+                                <li>Premium Features: Scent intensity control & diffusion duration scheduling. Cartridge authenticity chip. Eco-friendly, refillable/recyclable cartridges.</li>
+                                <li>Subscription/Recurring Model: “ScentPack” monthly delivery with tiered membership.</li>
+                            </ul>
+                        </div>
+                        <div class="feature-text" data-image="images/noor-version-image-3.webp">
+                            <h2>Battery & Power</h2>
+                            <ul>
+                                <li>Solid-State Battery Core for extended cycle life and improved safety.</li>
+                                <li>Graphene-Assisted Supercapacitor Buffer for instant power bursts.</li>
+                                <li>Adaptive Power Management AI learns user routine to optimize power.</li>
+                                <li>Fast USB-C Charging + Smart Trickle (0–80% in ~30 minutes).</li>
+                                <li>Battery Life Expectation: 5–7 days normal use; 12+ days in power-save mode.</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="split-section reverse" id="features">
-            <div class="container">
-                <div class="split-content">
-                    <div class="text-content">
-                        <h2>Prayer & Worship Core</h2>
-                        <ul>
-                            <li>Automatic, location-aware prayer times with Fiqh method customization.</li>
-                            <li>Rich Athan alerts from selectable Qaris.</li>
-                            <li>Interactive OLED display: next prayer countdown, Hijri/Gregorian dates, Qibla compass, Duas/Hadith rotation.</li>
-                            <li>Voice commands for playback, timing queries, Quran navigation.</li>
-                            <li>Follow-along Quran mode with Arabic + translation, ayah highlighting, memorization/repeat tools.</li>
-                        </ul>
-                    </div>
                     <div class="image-content">
-                        <img src="images/noor-version-color-2.webp" alt="Noor Pink">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="split-section">
-            <div class="container">
-                <div class="split-content">
-                    <div class="text-content">
-                        <h2>Advanced Scent System</h2>
-                        <ul>
-                            <li>Hidden Modular Cartridge Slot just above the OLED—concealed from view but easily replaceable.</li>
-                            <li>Dual-Mode Diffusion: Automatic gentle scent burst synchronized with Athan. Manual or scheduled diffusion via app.</li>
-                            <li>Cartridge Lines (Curated Scents): Arabic Oud Series, Bakhoor Collection, Floral Harmony, Spiritual Blend.</li>
-                            <li>Premium Features: Scent intensity control & diffusion duration scheduling. Cartridge authenticity chip. Eco-friendly, refillable/recyclable cartridges.</li>
-                            <li>Subscription/Recurring Model: “ScentPack” monthly delivery with tiered membership.</li>
-                        </ul>
-                    </div>
-                    <div class="image-content">
-                        <img src="images/noor-version-color-3.webp" alt="Noor Red">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="split-section reverse">
-            <div class="container">
-                <div class="split-content">
-                    <div class="text-content">
-                        <h2>Battery & Power</h2>
-                        <ul>
-                            <li>Solid-State Battery Core for extended cycle life and improved safety.</li>
-                            <li>Graphene-Assisted Supercapacitor Buffer for instant power bursts.</li>
-                            <li>Adaptive Power Management AI learns user routine to optimize power.</li>
-                            <li>Fast USB-C Charging + Smart Trickle (0–80% in ~30 minutes).</li>
-                            <li>Battery Life Expectation: 5–7 days normal use; 12+ days in power-save mode.</li>
-                        </ul>
-                    </div>
-                    <div class="image-content">
-                        <img src="images/noor-version-color-4.webp" alt="Noor Cream">
+                        <img src="images/noor-version-image-2.webp" alt="Feature Image" id="feature-image">
                     </div>
                 </div>
             </div>
@@ -190,26 +165,19 @@
 
         <section class="faq-section" id="faq">
             <div class="container">
-                <div class="split-content">
-                    <div class="image-content">
-                        <img src="images/noor-version-color-4.webp" alt="NoorMinar Cream">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">How long do the scent cartridges last?</button>
+                        <div class="accordion-content"><p>Each cartridge is designed to last for approximately 30-40 days with typical Athan-synchronized usage. You can manage consumption via the app.</p></div>
                     </div>
-                    <div class="text-content">
-                        <h2>Frequently Asked Questions</h2>
-                        <div class="accordion">
-                            <div class="accordion-item">
-                                <button class="accordion-header">How long do the scent cartridges last?</button>
-                                <div class="accordion-content"><p>Each cartridge is designed to last for approximately 30-40 days with typical Athan-synchronized usage. You can manage consumption via the app.</p></div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">Is the device difficult to set up?</button>
-                                <div class="accordion-content"><p>Setup is simple. Just plug it in, connect to your Wi-Fi via the NoorMinar app, and it will automatically detect your location for prayer times.</p></div>
-                            </div>
-                            <div class="accordion-item">
-                                <button class="accordion-header">Can I use my own scents?</button>
-                                <div class="accordion-content"><p>Noor uses proprietary, RFID-verified cartridges to ensure quality and optimal performance. We offer a subscription service for our curated scent collections.</p></div>
-                            </div>
-                        </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Is the device difficult to set up?</button>
+                        <div class="accordion-content"><p>Setup is simple. Just plug it in, connect to your Wi-Fi via the NoorMinar app, and it will automatically detect your location for prayer times.</p></div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Can I use my own scents?</button>
+                        <div class="accordion-content"><p>Noor uses proprietary, RFID-verified cartridges to ensure quality and optimal performance. We offer a subscription service for our curated scent collections.</p></div>
                     </div>
                 </div>
             </div>

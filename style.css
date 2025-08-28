@@ -124,7 +124,7 @@ nav a:hover {
 .hero-text {
     flex: 1;
     text-align: left;
-    max-width: 50%;
+    max-width: 45%; /* Give more space to the image */
 }
 
 .hero-text h1 {
@@ -140,14 +140,14 @@ nav a:hover {
 
 .hero-product-image {
     flex: 1;
-    max-width: 45%;
+    max-width: 55%; /* Increase image container size */
     text-align: center;
 }
 
 .hero-product-image img {
     max-width: 100%;
     height: auto;
-    max-height: 70vh;
+    max-height: 80vh; /* Increase max height of the image */
     object-fit: contain;
     filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
 }
@@ -161,6 +161,8 @@ nav a:hover {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s;
+    position: relative;
+    z-index: 2;
 }
 
 .hero button:hover {
@@ -172,21 +174,39 @@ section {
     padding: 100px 0;
 }
 
-.split-section {
-    padding: 80px 20px;
+.split-content-section {
+    padding: 100px 0;
 }
 
 .split-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 50px;
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
-.split-section.reverse .split-content {
-    flex-direction: row-reverse;
+.text-content {
+    flex: 1;
+}
+
+.image-content {
+    flex: 1;
+    text-align: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.feature-text {
+    display: none;
+}
+
+.feature-text.active {
+    display: block;
 }
 
 .text-content {
@@ -234,55 +254,6 @@ section {
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* Story Section */
-.story-section {
-    padding: 80px 0;
-}
-
-.story-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-}
-
-.story-text-content {
-    flex: 1;
-}
-
-.story-text-content h2 {
-    font-size: 3.8em;
-    margin-bottom: 20px;
-}
-
-.story-text-content p {
-    color: var(--text-muted);
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-
-.read-more-btn {
-    padding: 12px 28px;
-    font-size: 1em;
-    border: 1px solid var(--text-muted);
-    background: transparent;
-    color: var(--text-color);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.read-more-btn:hover {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--dark-bg);
-}
-
-.story-stats-grid {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
 
 .excellence-section {
     padding: 80px 0;
@@ -307,7 +278,7 @@ section {
 .excellence-image-stack .secondary-image {
     position: absolute;
     bottom: -20px;
-    right: -20px;
+    left: -20px;
     width: 50%;
     border-radius: 10px;
     border: 5px solid var(--dark-bg);
@@ -410,6 +381,47 @@ section {
 .play-button:hover {
     transform: translate(-50%, -50%) scale(1.1);
     background-color: #ffffff;
+}
+
+/* Video Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#video-player {
+    width: 100%;
 }
 
 /* Stats Section with Gradient */
@@ -523,8 +535,14 @@ section {
     text-align: right;
 }
 
-.faq-section .text-content {
-    text-align: left;
+.faq-section {
+    padding: 100px 0;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 3.8em;
+    margin-bottom: 50px;
 }
 
 .accordion {

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Staggered animations for sections
     const sections = document.querySelectorAll("section:not(.hero)");
     sections.forEach(section => {
-        const elementsToAnimate = section.querySelectorAll("h2, p, button, .stat-item, .video-image-container, .excellence-image-stack, .icon-feature-item, .split-content, .testimonial-card, .specs-grid, .faq-section .split-content, .newsletter-form");
+        const elementsToAnimate = section.querySelectorAll("h2, p, button, .stat-item, .video-image-container, .excellence-image-stack, .icon-feature-item, .text-content, .image-content, .testimonial-card, .specs-grid, .faq-section .accordion, .newsletter-form");
 
         gsap.from(elementsToAnimate, {
             scrollTrigger: {
@@ -41,6 +41,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Split content slider functionality
+    const featureTexts = document.querySelectorAll('.feature-text');
+    const featureImage = document.getElementById('feature-image');
+    let currentFeature = 0;
+
+    function showFeature(index) {
+        featureTexts.forEach((text, i) => {
+            if (i === index) {
+                text.classList.add('active');
+            } else {
+                text.classList.remove('active');
+            }
+        });
+        const newImage = featureTexts[index].getAttribute('data-image');
+        gsap.to(featureImage, { opacity: 0, duration: 0.3, onComplete: () => {
+            featureImage.src = newImage;
+            gsap.to(featureImage, { opacity: 1, duration: 0.3 });
+        }});
+    }
+
+    setInterval(() => {
+        currentFeature = (currentFeature + 1) % featureTexts.length;
+        showFeature(currentFeature);
+    }, 5000); // Change every 5 seconds
+
     // Accordion functionality
     const accordionHeaders = document.querySelectorAll('.accordion-header');
     accordionHeaders.forEach(header => {
@@ -53,5 +78,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 gsap.to(accordionContent, { maxHeight: 0, duration: 0.5, ease: "power2.in" });
             }
         });
+    });
+
+    // Video modal functionality
+    const videoModal = document.getElementById('video-modal');
+    const playButton = document.getElementById('play-button');
+    const closeButton = document.getElementById('close-button');
+    const videoPlayer = document.getElementById('video-player');
+
+    playButton.addEventListener('click', () => {
+        videoModal.style.display = 'block';
+        videoPlayer.play();
+    });
+
+    closeButton.addEventListener('click', () => {
+        videoModal.style.display = 'none';
+        videoPlayer.pause();
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == videoModal) {
+            videoModal.style.display = 'none';
+            videoPlayer.pause();
+        }
     });
 });
