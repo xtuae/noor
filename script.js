@@ -102,4 +102,24 @@ document.addEventListener('DOMContentLoaded', () => {
             videoPlayer.pause();
         }
     });
+
+    // Off-canvas menu functionality
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const offcanvasMenu = document.getElementById('offcanvas-menu');
+    const closeMenuButton = document.getElementById('close-menu');
+    const offcanvasLinks = document.querySelectorAll('.offcanvas-menu a:not(.close-btn)');
+
+    hamburgerButton.addEventListener('click', () => {
+        offcanvasMenu.style.width = '250px';
+    });
+
+    closeMenuButton.addEventListener('click', () => {
+        offcanvasMenu.style.width = '0';
+    });
+
+    offcanvasLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            offcanvasMenu.style.width = '0';
+        });
+    });
 });
